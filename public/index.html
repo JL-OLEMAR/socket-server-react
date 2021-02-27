@@ -11,58 +11,24 @@
 </head>
 
 <body class="container">
-    <h1 class="mt-5">MiniChat</h1>
+    <h1 class="mt-5">Acceso denegado</h1>
     <hr>
-
-    <form id="miFormulario">
-        <div class="row">
-            <div class="col-8">
-                <input type="text" id="txtMensaje" placeholder="Mensaje" class="form-control">
-            </div>
-
-            <div class="col-4">
-                <button type="submit" class="btn btn-primary">
-                    Enviar
-                </button>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col">
-                <ul id="misMensajes" class="mt-2"></ul>
-            </div>
-        </div>
-    </form>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.1.1/socket.io.js"
         integrity="sha512-oFOCo2/3DtjrJG4N27BjSLQWoiBv171sK6a+JiWjp/7agxC2nCUP358AqzxkBUb5jX8g6CYLPdSKQTbC0weCwA=="
         crossorigin="anonymous"></script>
 
     <script>
-        const socket = io('https://react-socket-jl.herokuapp.com/')
+        // Conexion con el socket server
+        const socket = io('http://localhost:8080/')
 
-        // Referencias elementos del DOM
-        const formulario = document.querySelector('#miFormulario')
-        const mensajes = document.querySelector('#misMensajes')
-        const txtMensaje = document.querySelector('#txtMensaje')
+        // Para emitir
+        // socket.emit('mensaje-to-server', { data })
 
-        formulario.addEventListener('submit', (e) => {
-            e.preventDefault()
-            const texto = txtMensaje.value
-            socket.emit('mensaje-to-server', { texto })
-        })
-
+        // Para escuchar
         socket.on('mensaje-from-server', (data) => {
-            mensajes.innerHTML += `<li>${data.texto}</li>`
+            // callback a ejecutar
         })
-
-
-        // socket.on('mensaje-bienvenida', (data) => {
-        //     console.log(data);
-        // })
-
-        // setTimeout(() => {
-        //     socket.emit('mensaje-cliente', { msg: 'cliente', nombre: 'Jose' })
-        // }, 2000);
     </script>
 </body>
 
