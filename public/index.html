@@ -22,13 +22,11 @@
         // Conexion con el socket server
         const socket = io('http://localhost:8080/')
 
-        // Para emitir
-        // socket.emit('mensaje-to-server', { data })
-
-        // Para escuchar
-        socket.on('mensaje-from-server', (data) => {
-            // callback a ejecutar
+        socket.on('current-bands', (data)=>{
+            console.log(data)
         })
+
+        
     </script>
 </body>
 
