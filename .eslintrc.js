@@ -19,6 +19,7 @@ module.exports = {
   },
   rules: {
     indent: [1, 2, { SwitchCase: 1 }],
-    'no-undef': RULES.OFF
+    'no-undef': RULES.OFF,
+    'no-unused-vars': RULES.WARN
   }
 }
