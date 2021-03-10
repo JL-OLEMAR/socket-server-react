@@ -6,7 +6,6 @@ class Sockets {
 
     // Crear la instacia de nuestro TicketList
     this.ticketList = new TicketList()
-
     this.socketEvents()
   }
 
