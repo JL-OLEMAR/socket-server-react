@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node index.js",
+    "lint": "standard --fix ."
   },
   "author": "",
   "license": "ISC",
@@ -26,5 +27,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "nodemon": "^2.0.7",
     "standard": "^16.0.3"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
   }
 }
